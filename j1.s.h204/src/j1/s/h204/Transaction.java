@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package j1.s.h204;
 
-/**
- *
- * @author lanh0
- */
 public class Transaction {
     private boolean transacionStatus;
     private int pennies;
@@ -16,7 +8,7 @@ public class Transaction {
     public Transaction(boolean transacionStatus, int pennies) {
         this.transacionStatus = transacionStatus;
         this.pennies = pennies;
-        if(transacionStatus ){
+        if(transacionStatus){
             value();
         }
     }
