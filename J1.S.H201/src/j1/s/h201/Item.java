@@ -22,11 +22,5 @@ public class Item {
 
     public double getDiscount() {
         return discount;
-    }
-    
-    
-   
-   
-    
-    
+    } 
 }

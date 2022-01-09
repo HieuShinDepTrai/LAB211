@@ -3,8 +3,8 @@ package j1.s.h201;
 
 public class Main {
     public static void main(String[] args) {
-        Item i1 = new Item("Shampoo", 10.0, 0.0);
-        Item i2 = new Item("Tomatoes", 5.0, 2.0);
+        Item i1 = new Item("Shampoo", 10.555, 0.135);
+        Item i2 = new Item("Tomatoes", 5.444, 2.111);
         
         DiscountBill dbill1 = new DiscountBill(new Employee("John"), true);
         

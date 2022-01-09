@@ -50,15 +50,15 @@ public class DiscountBill extends GroceryBill {
     @Override
     public void printReceipt() {
         System.out.println("\nBill for " + clerk.getName());
-        System.out.printf("   %s %8s %12s\n", "Item Name", "Price", "Discount");
+        System.out.printf("%12s %11s %13s\n", "Item Name", "Price", "Discount");
         for (int i = 0; i < itemList.size(); i++) {
             Item item = itemList.get(i);
-            System.out.printf("%d) %s %10.2f %10.2f\n", (i+1), item.getName(), item.getPrice(), item.getDiscount());
+            System.out.printf("%d) %-15s %-10.2f %-10.2f\n", (i+1), item.getName(), item.getPrice(), item.getDiscount());
 
         }
-        System.out.printf("No.Discounted Items:%d \n", getDiscountCount());
-        System.out.printf("Total Amount: %3.2f \n", super.getTotal());
-        System.out.printf("Bill after Discount: %3.2f (%2.2f%%)\n", getDiscountAmount(), getDiscountPercent());
-        
+        System.out.printf("No.Discounted Items: %d \n", getDiscountCount());
+        System.out.printf("Total Amount: %.2f \n", super.getTotal());
+        System.out.printf("Discount: %.2f (%.2f%%)\n", getDiscountAmount(), getDiscountPercent());
+        System.out.printf("Bill after Discount: %.2f - %.2f = %.2f \n", getTotal(), getDiscountAmount(), getTotal() - getDiscountAmount());
     }
 }

@@ -20,7 +20,7 @@ public class GroceryBill {
     
     public double getTotal(){
         double retTotal = 0;
-        for(int i = 0; i<itemList.size();i++){
+        for(int i = 0; i < itemList.size();i++){
             retTotal += itemList.get(i).getPrice();
         }
         return retTotal;
@@ -28,13 +28,11 @@ public class GroceryBill {
     
     public void printReceipt(){
         System.out.println("\nBill for " + clerk.getName());
-        System.out.printf("   %s %8s %12s\n", "Item Name", "Price", "Discount");
+        System.out.printf("%12s %11s %13s\n", "Item Name", "Price", "Discount");
         for (int i = 0; i < itemList.size(); i++) {
             Item item = itemList.get(i);
-            System.out.printf("%d) %s %10.2f %10.2f\n", (i+1), item.getName(), item.getPrice(), item.getDiscount());
+            System.out.printf("%d) %-15s %-10.2f %-10.2f\n", (i+1), item.getName(), item.getPrice(), item.getDiscount());
 
         }
     }
-    
-    
 }
