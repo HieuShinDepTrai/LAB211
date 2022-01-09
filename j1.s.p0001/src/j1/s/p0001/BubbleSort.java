@@ -1,6 +1,7 @@
 package j1.s.p0001;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class BubbleSort {
 
@@ -9,10 +10,12 @@ public class BubbleSort {
 
         int n = IntegerNumber.CheckInt("Enter number of array: ", Integer.MIN_VALUE, Integer.MAX_VALUE);
         int[] a = new int[n];
+        
+        Random rd = new Random();
         for (int i = 0; i < n; i++) {
-            a[i] = IntegerNumber.CheckInt("Enter a[" + i + "]: ", Integer.MIN_VALUE, Integer.MAX_VALUE);
+            a[i] = rd.nextInt(n + 1);
         }
-
+        
         System.out.print("Unsorted array: ");
         System.out.println(Arrays.toString(a));
 

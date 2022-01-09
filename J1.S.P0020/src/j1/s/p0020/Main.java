@@ -11,9 +11,8 @@ public class Main {
         int n = IntegerNumber.CheckInt("Enter number of array: ", Integer.MIN_VALUE, Integer.MAX_VALUE);
         int[] a = new int[n];
         
-        Random rd = new Random();
         for (int i = 0; i < n; i++) {
-            a[i] = rd.nextInt(n + 1);
+            a[i] = IntegerNumber.CheckInt("Enter a[" + i + "]: ", Integer.MIN_VALUE, Integer.MAX_VALUE);
         }
 
         System.out.print("Unsorted array: ");
