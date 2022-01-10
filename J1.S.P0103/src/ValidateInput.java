@@ -10,7 +10,7 @@ public class ValidateInput {
     Date CheckDate(String Mess, String format) {
         // parse 1 String -> Date
         SimpleDateFormat SDF = new SimpleDateFormat(format);
-        // Nếu nhập sai ngày như 30/02 thì sẽ báo sai và phải nhập lại
+        // If you enter the wrong date like 30/02, it will be reported wrong and must be re-entered
         SDF.setLenient(false);
         Date ret;
         do {
