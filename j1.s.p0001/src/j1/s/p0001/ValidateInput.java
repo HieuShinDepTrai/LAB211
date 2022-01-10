@@ -19,7 +19,9 @@ public class ValidateInput {
                 }
                 System.out.println("Out of range, please enter in range: " + Min + " - " + Max + ")");
             } catch (Exception e) {
-                if (input.matches("\\-?\\d*")) {
+                // Regex: dấu "?" có thể có dấu trừ hoặc không. //d+ : nhiều hơn hoặc bằng 1 //d*: nhiều hơn hoặc bằng 0
+                // ?: bằng 0 hoặc 1
+                if (input.matches("\\-?\\d+")) {
                     System.out.println("Out of range of integer number");
                 } else {
                     System.out.println("Invalid number input, please enter an integer number only");

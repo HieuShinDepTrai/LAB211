@@ -19,7 +19,7 @@ public class ValidateInput {
                 }
                 System.out.println("Out of range, please enter in range: " + Min + " - " + Max + ")");
             } catch (Exception e) {
-                if (input.matches("\\-?\\d*")) {
+                if (input.matches("\\-?\\d+")) {
                     System.out.println("Out of range of integer number");
                 } else {
                     System.out.println("Invalid number input, please enter an integer number only");

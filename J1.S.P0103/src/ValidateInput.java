@@ -8,7 +8,9 @@ public class ValidateInput {
     Scanner sc = new Scanner(System.in);
 
     Date CheckDate(String Mess, String format) {
+        // parse 1 String -> Date
         SimpleDateFormat SDF = new SimpleDateFormat(format);
+        // Nếu nhập sai ngày như 30/02 thì sẽ báo sai và phải nhập lại
         SDF.setLenient(false);
         Date ret;
         do {
