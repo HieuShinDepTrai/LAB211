@@ -9,7 +9,7 @@ public class Main {
 
         int n = IntegerNumber.CheckInt("Enter number of array: ", Integer.MIN_VALUE, Integer.MAX_VALUE);
         int[] a = new int[n];
-        
+
         for (int i = 0; i < n; i++) {
             a[i] = IntegerNumber.CheckInt("Enter a[" + i + "]: ", Integer.MIN_VALUE, Integer.MAX_VALUE);
         }
@@ -18,15 +18,23 @@ public class Main {
 
         System.out.println(Arrays.toString(a));
 
-        int temp;
-        for (int i = 0; i < a.length; i++) {
-            for (int j = i + 1; j < a.length; j++) {
-                if (a[i] > a[j]) {
-                    temp = a[i];
-                    a[i] = a[j];
-                    a[j] = temp;
+        int i, j, min_idx, temp;
+        // Move the boundaries of sorted and unsorted arrays
+        for (i = 0; i < n - 1; i++) {
+            // Find smallest element in unsorted array
+            min_idx = i;
+            for (j = i + 1; j < n; j++) {
+                if (a[j] < a[min_idx]) {
+                    min_idx = j;
                 }
             }
+
+            // Swap the smallest element with the first element
+            temp = a[min_idx];
+            a[min_idx] = a[i];
+            a[i] = temp;
+            
+//            System.out.println(Arrays.toString(a));
         }
 
         System.out.print("Sorted array: ");

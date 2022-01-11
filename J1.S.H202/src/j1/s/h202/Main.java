@@ -29,9 +29,14 @@ public class Main {
 //        return result;
 //    }
     public static String printReverse(String S) {
-        StringBuilder str = new StringBuilder(S);
-//        System.out.println(str.reverse());
-        return str.reverse().toString();
+        String result = "";
+        for (int i = S.length() - 1; i >= 0; i--) {
+            result += S.charAt(i);
+        }
+        return result;
+//        StringBuilder str = new StringBuilder(S);
+////        System.out.println(str.reverse());
+//        return str.reverse().toString();
     }
 
     public static void main(String[] args) {
@@ -39,6 +44,7 @@ public class Main {
 
         String s = "";
 //        s = getString("Enter a String: ", s.isEmpty() == true);
+        System.out.print("Enter a String: ");
         s = sc.nextLine();
         if (s.trim().isEmpty()) {
             return;
