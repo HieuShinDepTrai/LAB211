@@ -34,7 +34,7 @@ public class Main {
             a[min_idx] = a[i];
             a[i] = temp;
             
-//            System.out.println(Arrays.toString(a));
+            System.out.println(Arrays.toString(a));
         }
 
         System.out.print("Sorted array: ");

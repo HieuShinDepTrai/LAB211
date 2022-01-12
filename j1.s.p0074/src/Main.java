@@ -2,12 +2,14 @@
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         Validate v = new Validate();
         do {
             v.printMenu();
+            System.out.print("Enter your choice: ");
             int choice = v.getChoice();
-            switch(choice){
+            switch (choice) {
                 case 1:
                     v.add();
                     break;

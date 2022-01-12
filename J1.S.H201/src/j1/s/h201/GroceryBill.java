@@ -6,9 +6,9 @@ import java.util.List;
 
 public class GroceryBill {
     
-    protected List<Item> itemList = new ArrayList<>();
+    List<Item> itemList = new ArrayList<>();
     
-    protected Employee clerk;
+    Employee clerk;
 
     public GroceryBill(Employee clerk) {
         this.clerk = clerk;
@@ -32,7 +32,6 @@ public class GroceryBill {
         for (int i = 0; i < itemList.size(); i++) {
             Item item = itemList.get(i);
             System.out.printf("%d) %-15s %-10.2f %-10.2f\n", (i+1), item.getName(), item.getPrice(), item.getDiscount());
-
         }
     }
 }

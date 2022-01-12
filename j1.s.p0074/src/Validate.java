@@ -2,25 +2,35 @@
 import java.util.Scanner;
 
 public class Validate {
+
     Scanner sc = new Scanner(System.in);
-    public int getChoice(){
-        int number = 0;
-        System.out.print("Enter your choice: ");
-        do{
+    
+    public int CheckInt(int Min, int Max) {
+        int ret = 0;
+        String input = "";
+        do {
             try {
-                number = Integer.parseInt(sc.nextLine());
-                if (number < 1 && number > 4) {
-                    System.out.print("Input number 1-4: ");
-                    continue;
+                input = sc.nextLine();
+                ret = Integer.parseInt(input.trim());
+                if (ret >= Min && ret <= Max) {
+                    break;
                 }
+                System.out.println("Out of range, please enter in range: " + "(" + Min + " - " + Max + ")");
             } catch (Exception e) {
-                System.out.print("Please input valid number: ");
-                continue;
+                if (input.matches("\\-?\\d+")) {
+                    System.out.println("Out of range of integer number");
+                } else {
+                    System.out.println("Invalid number input, please enter an integer number only");
+                }
             }
-            break;
-        }while(true);
-        return number;
+        } while (true);
+        return ret;
     }
+
+    public int getChoice() {
+        return CheckInt(1, 4);
+    }
+
     public void printMenu() {
         System.out.println("========= Calculator Program =========");
         System.out.println("1. Addition Matrix");
@@ -28,22 +38,24 @@ public class Validate {
         System.out.println("3. Multiplication Matrix");
         System.out.println("4. Quit");
     }
-     public int getNumber(int i, int j) {
+
+    public int getNumber(int i, int j) {
         Scanner sc = new Scanner(System.in);
         int id = 0;
         while (true) {
             try {
-                System.out.format("Enter matrix[%d][%d]: ",i,j);
-                id = Integer.parseInt(sc.nextLine());
+                System.out.format("Enter matrix[%d][%d]: ", i, j);
+                id = Integer.parseInt(sc.nextLine().trim());
             } catch (Exception e) {
-                System.out.println("please try again ");
+                System.out.println("Please try again!");
                 continue;
             }
             break;
         }
         return id;
     }
-    public int[][] getMatrix(int row, int col){
+
+    public int[][] getMatrix(int row, int col) {
         int[][] matrix = new int[row][col];
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < col; j++) {
@@ -52,22 +64,13 @@ public class Validate {
         }
         return matrix;
     }
-     public int getSize(String mess) {
-        Scanner sc = new Scanner(System.in);
-        int id = 0;
-        while (true) {
-            try {
-                System.out.format(mess);
-                id = Integer.parseInt(sc.nextLine());
-            } catch (Exception e) {
-                System.out.println("please try again ");
-                continue;
-            }
-            break;
-        }
-        return id;
+
+    public int getSize(String mess) {
+        System.out.print(mess);
+        return CheckInt(1, Integer.MAX_VALUE);
     }
-    public void add(){
+
+    public void add() {
         int row1 = getSize("Enter row of matrix 1: ");
         int col1 = getSize("Enter cols of matrix 1: ");
         //get matrix 1
@@ -75,19 +78,19 @@ public class Validate {
         int matrix1[][] = getMatrix(row1, col1);
         int row2 = 0;
         int col2 = 0;
-        do{
+        do {
             row2 = getSize("Enter row of matrix 2: ");
-            if(row2 != row1){
-                System.out.println("Row 2 must equal row 1:");
-                continue;
+            if (row2 != row1) {
+                System.out.println("Row 2 must equal row 1");
             }
-            col2 = getSize("Enter col of matrix 2: ");
-            if(col2 != col1){
-                System.out.println("Col 2 must equal col 1:");
-                continue;
+        } while (row2 != row1);          
+            
+        do {
+            col2 = getSize("Enter Col of matrix 2: ");
+            if (col2 != col1) {
+                System.out.println("Col 2 must equal Col 1");
             }
-            break;
-        }while(true);
+        } while (col2 != col1);  
         //get matrix 2
         int matrix2[][] = getMatrix(row2, col2);
         int matrix3[][] = new int[row1][col1];
@@ -104,26 +107,26 @@ public class Validate {
         System.out.println("=");
         printMatrix(matrix3, row1, col1);
     }
-   
-     public void sub(){
+
+    public void sub() {
         int row1 = getSize("Enter row of matrix 1: ");
         int col1 = getSize("Enter cols of matrix 1: ");
         int matrix1[][] = getMatrix(row1, col1);
         int row2 = 0;
         int col2 = 0;
-        do{
+        do {
             row2 = getSize("Enter row of matrix 2: ");
-            if(row2 != row1){
-                System.out.println("Row 2 must equal row 1:");
-                continue;
+            if (row2 != row1) {
+                System.out.println("Row 2 must equal row 1");
             }
-            col2 = getSize("Enter col of matrix 2: ");
-            if(col2 != col1){
-                System.out.println("Col 2 must equal col 1:");
-                continue;
+        } while (row2 != row1);          
+            
+        do {
+            col2 = getSize("Enter Col of matrix 2: ");
+            if (col2 != col1) {
+                System.out.println("Col 2 must equal Col 1");
             }
-            break;
-        }while(true);
+        } while (col2 != col1); 
         int matrix2[][] = getMatrix(row2, col2);
         int matrix3[][] = new int[row1][col1];
         for (int i = 0; i < row1; i++) {
@@ -138,27 +141,28 @@ public class Validate {
         System.out.println("=");
         printMatrix(matrix3, row1, col1);
     }
-     public void multi(){
+
+    public void multi() {
         int row1 = getSize("Enter row of matrix 1: ");
         int col1 = getSize("Enter cols of matrix 1: ");
         int matrix1[][] = getMatrix(row1, col1);
         int row2 = 0;
         int col2 = 0;
-        do{
+        do {
             row2 = getSize("Enter row of matrix 2: ");
-            if(row2 != col1){
-                System.out.println("row 2 must equal col 1:");
+            if (row2 != col1) {
+                System.out.println("row 2 must equal col 1");
                 continue;
             }
             col2 = getSize("Enter col of matrix 2: ");
             break;
-        }while(true);
+        } while (true);
         int matrix2[][] = getMatrix(row2, col2);
         int matrix3[][] = new int[row1][col2];
         for (int i = 0; i < row1; i++) {
             for (int j = 0; j < col2; j++) {
-               for (int k = 0; k < row2; k++) {
-                    matrix3[i][j] = matrix3[i][j] + matrix1[i][k] * matrix2[k][j];
+                for (int k = 0; k < row2; k++) {
+                    matrix3[i][j] += matrix1[i][k] * matrix2[k][j];
                 }
             }
         }
@@ -169,10 +173,11 @@ public class Validate {
         System.out.println("=");
         printMatrix(matrix3, row1, col2);
     }
-     public void printMatrix(int matrix[][], int row, int col){
+
+    public void printMatrix(int matrix[][], int row, int col) {
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < col; j++) {
-                System.out.print(matrix[i][j] +" ");
+                System.out.print("[" + matrix[i][j] + "]");
             }
             System.out.println();
         }
