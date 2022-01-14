@@ -1,18 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Model;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**
- *
- * @author ACER
- */
-public class employee implements Comparable<employee>{
+public class employee implements Comparable<employee> {
+
     private String[] TYPESEX = {"Male", "Female", "neither"};
     private String id;
     private String firstName;
@@ -93,7 +85,7 @@ public class employee implements Comparable<employee>{
 
     public void setDOB(Date DOB) {
         this.DOB = DOB;
-        
+
     }
 
     public int getSex() {
@@ -140,7 +132,7 @@ public class employee implements Comparable<employee>{
     public int compareTo(employee o) {
         if (this.getSalary() < o.getSalary()) {
             return -1;
-        } else if (this.getSalary() > o.getSalary()) {  
+        } else if (this.getSalary() > o.getSalary()) {
             return 1;
         } else {
             return 0;

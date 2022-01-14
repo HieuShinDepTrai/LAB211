@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package j1.s.h205;
 
-/**
- *
- * @author lanh0
- */
 public class Main {
 
     public static void main(String[] args) {
@@ -26,8 +18,8 @@ public class Main {
         minMaxAccount.debit(db2); 
 
         System.out.println("Minimum Balance in the Bank Account: $" + minMaxAccount.getMin());
-        System.out.println("Maximum Balnace in the Bank Account: $" + minMaxAccount.getMax());
-        System.out.println("Currend Balance in the Bank Account: $" + minMaxAccount.getBalance());
+        System.out.println("Maximum Balance in the Bank Account: $" + minMaxAccount.getMax());
+        System.out.println("Current Balance in the Bank Account: $" + minMaxAccount.getBalance());
 
     }
 }

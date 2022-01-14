@@ -28,53 +28,34 @@ public class Main {
     }
 
     public static String printReverse(String string) {
-        String str = "", str1 = "";
-        String[] words = string.trim().split("\\s+");
-        if (words.length == 1) {
-            string = Character.toUpperCase(string.charAt(0)) + string.substring(1) + "";
-            return string;
+        String str = "";
+        String[] src = string.split("\\s+"); 
+        
+        for (int i = src.length - 1; i >= 0; i--) {
+            str += src[i] + " ";
         }
-        for (int i = words.length - 1; i >= 0; i--) {
-            str += (words[i] + " ");
-        }
-
-        String[] words1 = str.trim().split("\\s+");
-
-        for (int i = 0; i < words1.length; i++) {
-            if (words[i].endsWith(".") || words[i].endsWith("?")
-                    || words[i].endsWith("!") || words[i].endsWith(";") || words[i].endsWith(",")) {
-                if (words1[i].endsWith(".") || words1[i].endsWith("?")
-                        || words1[i].endsWith("!") || words1[i].endsWith(";") || words1[i].endsWith(",")) {
-                    words1[i] = words1[i].substring(0, words1[i].length() - 1) + words[i].charAt(words[i].length() - 1);
-                } else {
-                    words1[i] = words1[i] + words[i].charAt(words[i].length() - 1);
-                }
-            } else {
-                if (words1[i].endsWith(".") || words1[i].endsWith("?")
-                        || words1[i].endsWith("!") || words1[i].endsWith(";") || words1[i].endsWith(",")) {
-                    words1[i] = words1[i].substring(0, words1[i].length() - 1);
-                }
-            }
-        }
-
+        
+        String[] src1 = str.split("\\s+"); 
+        
         str = "";
-        for (int i = 0; i < words1.length; i++) {
-            if (i == 0) {
-                words1[i] = Character.toUpperCase(words1[i].charAt(0)) + words1[i].substring(1, words1[i].length());
+        
+        for (int i = 0; i < src1.length; i++) {
+            if(src1[i].endsWith(".")) {
+                src1[i] = src1[i].substring(0, src1[i].length() - 1);
             }
-            if (words1[i].endsWith(".") || words1[i].endsWith("?")
-                    || words1[i].endsWith("!") || words1[i].endsWith(";")) {
-                words1[i + 1] = Character.toUpperCase(words1[i + 1].charAt(0)) + words1[i + 1].substring(1, words1[i + 1].length());
+            if (src[i].charAt(src[i].length()-1) == '.') {
+                src1[i] = src1[i] + src[i].charAt(src[i].length()-1);
             }
-            str += (words1[i] + " ");
+            
+            src1[i] = src1[i].substring(0, 1).toUpperCase() + src1[i].substring(1).toLowerCase();
+            str += src1[i] + " ";
         }
-
         return str.trim();
     }
 
     public static void main(String[] args) {
         String str = "";
         str = getString("Input a not-empty String: ", str.isEmpty() == true);
-        System.out.println("The reverse of the string is : " + printReverse(str));
+        System.out.println("The reverse of the string is: " + printReverse(str));
     }
 }

@@ -17,7 +17,7 @@ public class DiscountBill extends GroceryBill {
                     retDiscount++;
                 }
             }
-        }
+        } 
         return retDiscount;
     }
 
@@ -59,4 +59,3 @@ public class DiscountBill extends GroceryBill {
         System.out.printf("Bill after Discount: %.2f - %.2f = %.2f \n", super.getTotal(), getDiscountAmount(), super.getTotal() - getDiscountAmount());
     }
 }
-

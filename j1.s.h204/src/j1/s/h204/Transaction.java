@@ -8,9 +8,9 @@ public class Transaction {
     public Transaction(boolean transacionStatus, int pennies) {
         this.transacionStatus = transacionStatus;
         this.pennies = pennies;
-        if(transacionStatus){
-            value();
-        }
+//        if(transacionStatus){
+//            value();
+//        }
     }
     public int value (){
         return pennies*100;
