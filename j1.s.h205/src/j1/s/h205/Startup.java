@@ -15,6 +15,5 @@ public class Startup {
     public void setInitialBalance(double initialBalance) {
         this.initialBalance = initialBalance;
     }
-    
-    
+
 }

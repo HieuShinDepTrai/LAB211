@@ -28,7 +28,19 @@ public class J1SH206 {
         return ret;
     }
 
-    public static void printSquare(int min, int max) {
+    public static void printSquare(int min, int max) {  
+        // min=1 max=5
+        // i = 1 j=1->5: 12345 |
+        // i = 2 j=2->5: 2345 | 1
+        // i = 3 j=3->5: 345 | 12
+        // i = 4 j=4->5: 45 | 123
+        // i = 5 j=5 : 5 | 1234
+        
+        // min=2 max=5
+        // i = 2 j=2->5 : 2345 |
+        // i = 3 j = 3 -> 5 : 345 | 2
+        // i = 4 j = 4 -> 5: 45 | 23
+        // i = 5 j = 5 : 5 | 234
         for (int i = min; i <= max; i++) {
             for (int j = i; j <= max; j++) {
                 System.out.print(j);

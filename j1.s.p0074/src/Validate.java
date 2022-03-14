@@ -52,56 +52,69 @@ public class Validate {
 
     public void add() {
         //get row and col of matrix 2 (row and col of matrix 2 must be equal row and col of matrix 1)
-        System.out.println("Enter row of matrix 1 and matrix 2: ");
+        System.out.println("Enter row of matrix 1: ");
         int row1 = CheckInt(1, Integer.MAX_VALUE);
-        System.out.println("Enter col of matrix 1 and matrix 2: ");
+        System.out.println("Enter col of matrix 1: ");
         int col1 = CheckInt(1, Integer.MAX_VALUE);
         //get matrix 1
         System.out.println("Enter matrix 1: ");
-        int matrix1[][] = getMatrix(row1, col1);
+        int matrix1[][] = getMatrix(row1, col1); 
+        
+        System.out.print("Enter row 2 (Row 2 must be equal to row 1): ");
+        int row2 = CheckInt(row1, row1);
+        
+        System.out.print("Enter col 2 (Col 2 must be equal to col 1): ");
+        int col2 = CheckInt(col1, col1);
+        
         System.out.println("Enter matrix 2: ");
         //get matrix 2
-        int matrix2[][] = getMatrix(row1, col1);
-//        int row1 = 0;
-//        int col1 = 0;
-//        int[][] matrix1 = new int[row1][col1];
-//        int[][] matrix2 = new int[row1][col1];
-        int matrix3[][] = new int[row1][col1];
+        int matrix2[][] = getMatrix(row2, col2);
+        int matrix3[][] = new int[row2][col2];
         //matrix 1 + matrix 2
         for (int i = 0; i < row1; i++) {
             for (int j = 0; j < col1; j++) {
                 matrix3[i][j] = matrix1[i][j] + matrix2[i][j];
             }
         }
+        // 1 2        5 6       6 8
+        // 3 4    +   7 8   =   10 12
         System.out.println("Result: ");
         printMatrix(matrix1, row1, col1);
         System.out.println("+");
-        printMatrix(matrix2, row1, col1);
+        printMatrix(matrix2, row2, col2);
         System.out.println("=");
         printMatrix(matrix3, row1, col1);
     }
 
     public void sub() {
-        //get row and col of matrix 2 (row and col of matrix 2 must be equal row and col of matrix 1)
-        System.out.println("Enter row of matrix 1 + matrix 2: ");
+        System.out.println("Enter row of matrix 1: ");
         int row1 = CheckInt(1, Integer.MAX_VALUE);
-        System.out.println("Enter col of matrix 1 + matrix 2: ");
+        System.out.println("Enter col of matrix 1: ");
         int col1 = CheckInt(1, Integer.MAX_VALUE);
         //get matrix 1
         System.out.println("Enter matrix 1: ");
-        int matrix1[][] = getMatrix(row1, col1);
+        int matrix1[][] = getMatrix(row1, col1); 
+        
+        System.out.print("Enter row 2 (Row 2 must be equal to row 1): ");
+        int row2 = CheckInt(row1, row1);
+        
+        System.out.print("Enter col 2 (Col 2 must be equal to col 1): ");
+        int col2 = CheckInt(col1, col1);
         System.out.println("Enter matrix 2: ");
-        int matrix2[][] = getMatrix(row1, col1);
+        int matrix2[][] = getMatrix(row2, col2);
         int matrix3[][] = new int[row1][col1];
-        for (int i = 0; i < row1; i++) {
-            for (int j = 0; j < col1; j++) {
+        for (int i = 0; i < row2; i++) {
+            for (int j = 0; j < col2; j++) {
                 matrix3[i][j] = matrix1[i][j] - matrix2[i][j];
             }
         }
+        
+         // 1 2        5 6       -4 -4
+        //  3 4    -   7 8   =   -4 -4
         System.out.println("Result: ");
         printMatrix(matrix1, row1, col1);
         System.out.println("-");
-        printMatrix(matrix2, row1, col1);
+        printMatrix(matrix2, row2, col2);
         System.out.println("=");
         printMatrix(matrix3, row1, col1);
     }
@@ -115,14 +128,18 @@ public class Validate {
         //get matrix 1
         System.out.println("Enter matrix 1: ");
         int matrix1[][] = getMatrix(row1, col1);
-        int row2 = col1;
-        System.out.println("Row of matrix 2 must be equal to col of matrix 1 = " + col1);
+        System.out.println("Enter row 2 (Row of matrix 2 must be equal to col of matrix 1!): ");
+        int row2 = CheckInt(col1, col1);
         // get matrix 2
         System.out.print("Enter col of matrix 2: ");
         int col2 = CheckInt(1, Integer.MAX_VALUE);
 
         System.out.println("Enter matrix 2: ");
         int matrix2[][] = getMatrix(row2, col2);
+        // 3 4 x 4 5 = 3 x 5
+        // 1 2 3        2 3 
+        // 4 5 6    x   5 6        24 21
+        //              4 2     =  57 54
         int matrix3[][] = new int[row1][col2];
         for (int i = 0; i < row1; i++) {
             for (int j = 0; j < col2; j++) {

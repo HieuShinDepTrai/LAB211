@@ -1,12 +1,10 @@
-package View;
 
-import Controller.Utility;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws Exception {
-        Inputter I = new Inputter();
+    public static void main(String[] args) {
+        Manager M = new Manager();
         Scanner sc = new Scanner(System.in);
         int option;
 
@@ -21,34 +19,33 @@ public class Main {
             System.out.println("0. Exit");
             System.out.print("Your option: ");
 
-            option = Utility.getInt("");
+            option = Inputter.inputInt("", 0, 6);
             switch (option) {
                 case 1:
-                    I.addEmployee();
+                    M.addEmployee();
                     break;
                 case 2:
-                    I.updateEmployee();
+                    M.updateEmployee();
                     break;
                 case 3:
-                    I.removeEmployee();
+                    M.removeEmployee();
                     break;
                 case 4:
-                    I.searchByName();
+                    M.searchByName();
                     break;
                 case 5:
-                    I.sortBySalary();
+                    M.sortBySalary();
                     break;
                 case 6:
-                    I.Display();
+                    M.Display();
                     break;
                 case 0:
                     return;
                 default:
-                    System.err.println("Ko bit doc so ak");
+                    System.out.println("Ko bit doc so ak");
                     break;
 
             }
         }
-
     }
 }
