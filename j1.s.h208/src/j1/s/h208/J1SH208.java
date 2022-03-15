@@ -38,13 +38,13 @@ public class J1SH208 {
             list.add(n % 10);
             n = n / 10;
         }
-        // 1234567 7654321
+        // 1234567 7 6 5 4 3 2 1
 //        System.out.println(list.toString());
         int s= list.size();
-        // 7654321 
-        // 6754321
-        // 6745321
-        // 6745231
+        // 7 6 5 4 3 2 1 
+        // 6 7 5 4 3 2 1
+        // 6 7 4 5 3 2 1
+        // 6 7 4 5 2 3 1 
         // 123456
         // 214365
         // 4234567
@@ -54,6 +54,7 @@ public class J1SH208 {
             list.set(i + 1, tg);
         }
 //        System.out.println(list.toString());
+// 6 7 4 5 2 3 1 
         int x = 1;
         for (Integer item : list) {
             n += item * x;

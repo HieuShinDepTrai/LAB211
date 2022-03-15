@@ -49,6 +49,7 @@ public class ArrayIntList {
                 count++;
             }
         }
+        // 2 2 2 2 2 -5 -5 3 3 3 3
         
         ArrayIntList list = new ArrayIntList(arr, sizeArr);
 

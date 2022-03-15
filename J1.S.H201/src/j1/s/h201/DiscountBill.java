@@ -10,19 +10,19 @@ public class DiscountBill extends GroceryBill {
     }
 
     public int getDiscountCount() {
-        int retDiscount = 0;
+        int countDiscount = 0;
         if (isPreferredCustomer) {
             for (int i = 0; i < itemList.size(); i++) {
                 if (itemList.get(i).getDiscount() > 0) {
-                    retDiscount++;
+                    countDiscount++;
                 }
             }
         } 
-        return retDiscount;
+        return countDiscount;
     }
 
     public double getDiscountAmount() {
-        int retAmount = 0;
+        double retAmount = 0;
         if (isPreferredCustomer) {
             for (int i = 0; i < itemList.size(); i++) {
                 retAmount += itemList.get(i).getDiscount();

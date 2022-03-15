@@ -2,9 +2,9 @@
 package j1.s.h201;
 
 public class Item {
-   private String name = "";
-   private double price = 0;
-   private double discount = 0;
+   private String name;
+   private double price;
+   private double discount;
 
     public Item(String name, double price, double discount) {
         this.name = name;

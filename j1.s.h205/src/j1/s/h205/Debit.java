@@ -14,6 +14,5 @@ public class Debit {
     public double getDebitAmount() {
         return debitAmount;
     }
-    
-    
+  
 }
