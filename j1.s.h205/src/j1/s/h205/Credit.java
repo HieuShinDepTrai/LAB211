@@ -8,7 +8,7 @@ public class Credit {
     public Credit() {
     }
 
-    public Credit(int creditAmount) {
+    public Credit(double creditAmount) {
         this.creditAmount = creditAmount;
     }
 

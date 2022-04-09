@@ -38,4 +38,10 @@ public class MinMaxAccount extends BankingAccount{
     public double getMax(){
         return maxBalance;
     }
+
+    public void printInfo() {
+        System.out.println("Minimum Balance in the Bank Account: $" + getMin());
+        System.out.println("Maximum Balance in the Bank Account: $" + getMax());
+        System.out.println("Current Balance in the Bank Account: $" + getBalance());
+    }
 }
